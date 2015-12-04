@@ -83,6 +83,23 @@ function init() {
      });
  }
 
+
+// Additional functional
+/*
+ * TODO: write function add to menu new feed
+ */
+function addToMenuFeed(feed){
+
+}
+
+/*
+ * TODO: write function remove from menu feed by id
+ */
+function removeMenuFeed(id){
+
+}
+
+
 /* Google API: Loads the Feed Reader API and defines what function
  * to call when the Feed Reader API is done loading.
  */

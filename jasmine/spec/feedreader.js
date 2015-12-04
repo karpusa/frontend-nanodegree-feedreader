@@ -105,5 +105,46 @@ $(function() {
         });
     });
 
+    /*
+     * This additional test
+     * Test Suite for Add/Delete new feed to menu
+     */
+    describe('Feed list in menu', function() {
 
+        //Test ensure that new feeds added to menu
+        it('add new feed to end menu', function() {
+            var feed = {
+                    name: 'Smashing Magazine',
+                    url: 'http://www.smashingmagazine.com/feed/'
+                },
+                coundFeeds = allFeeds.length-1, //count feeds
+                id;
+
+            //Add feed to end in menu
+            addToMenuFeed(feed);
+
+            //after add length feed incremental + 1 and equal data attribute 'data-id'
+            id = coundFeeds + 1;
+            //Check new feed in menu with text
+            expect($('.feed-list li a[data-id="'+id+'"]').text()).toBe(feed.name);
+        });
+
+        //Test ensure that feed removed from menu
+        it('remove feed from menu', function() {
+            //Remove feed from menu by id
+            var id = 0, //it first item in menu list
+                feedText = $('.feed-list li a[data-id="'+id+'"]').text(),
+                coundFeedsBefore = allFeeds.length,
+                coundFeedsAfter;
+
+            removeMenuFeed(id);
+            coundFeedsAfter = allFeeds.length; //after remove length is -1
+
+            //Check if removed feed from menu, find text no
+            expect($('.feed-list li a[data-id="'+id+'"]').text()).not.toBe(feedText);
+            //Check if changed length -1 in allFeeds
+            expect(coundFeedsAfter).toBe(coundFeedsBefore-1);
+        });
+
+    });
 }());

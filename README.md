@@ -15,3 +15,5 @@ In this project you are given a web-based application that reads RSS feeds. The 
 4. Ensure that the menu changes visibility when clicked
 5. Ensure when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container.
 6. Ensure that a new feed is loaded by the loadFeed function that the content actually changes.
+7. Additional test: ensure that new feed added to menu
+8. Additional test: ensure that feed removed from menu
